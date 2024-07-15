@@ -2,48 +2,32 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { Link } from "react-scroll";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="px-4 py-6 mx-auto lg:py-8 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-      <div className="relative flex items-center justify-between lg:justify-center lg:space-x-16">
-        <ul className="flex items-center hidden space-x-8 lg:flex">
+    <div className="px-4 py-6 mx-auto lg:py-7 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
+      <div className="relative flex items-center justify-between lg:justify-center lg:space-x-16 ">
+        <ul className=" items-center hidden  space-x-8 lg:flex">
           <li>
-            <a
-              href="#donate"
-              aria-label="Donate"
-              title="Donate"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-            >
-              Donate
-            </a>
-          </li>
-          <li>
-            <a
-              href="#team"
-              aria-label="Our Team"
-              title="Our Team"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            <Link
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer"
+              to="team"
+              smooth={true}
+              duration={500}
             >
               Our Team
-            </a>
+            </Link>
           </li>
         </ul>
-        <a
-          href="#"
-          aria-label="Company"
-          title="Company"
-          className="inline-flex items-center"
-        >
-          {/* <div className="h-12 lg:h-14 relative">
-            <Image src={"/logo.png"} alt="logo" fill></Image>
-          </div> */}
-          <h1 className="text-3xl font-extrabold">SYC</h1>
-          {/* <img src="./../../public/logo.png" alt="" className="h-12 lg:h-14" /> */}
-        </a>
-        <ul className="flex items-center hidden space-x-8 lg:flex">
-          <li>
+
+        <div className=" xl:w-[84px] xl:h-[84px] lg:w-[70px] lg:h-[70px] w-[55px] h-[55px] rounded-full  relative border-2 border-black">
+          <Image src={"/logo.png"} alt="logo" fill></Image>
+        </div>
+
+        <ul className="hidden items-center space-x-8 lg:flex">
+          {/* <li>
             <a
               href="#stats"
               aria-label="Statistics"
@@ -52,16 +36,16 @@ export default function Navbar() {
             >
               Statistics
             </a>
-          </li>
+          </li> */}
           <li>
-            <a
-              href="#about"
-              aria-label="About Us"
-              title="About Us"
-              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            <Link
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer"
+              to="about"
+              smooth={true}
+              duration={500}
             >
               About Us
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="lg:hidden">
@@ -87,7 +71,7 @@ export default function Navbar() {
             </svg>
           </button>
           {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full">
+            <div className="absolute top-0 right-0 w-[300px]">
               <div className="p-5 bg-zinc-100 border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
@@ -102,7 +86,7 @@ export default function Navbar() {
                     <button
                       aria-label="Close Menu"
                       title="Close Menu"
-                      className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                      className="p-2  -mt-2 -mr-6 transition duration-200 rounded focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
@@ -117,54 +101,30 @@ export default function Navbar() {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                      <a
-                        href="#"
-                        aria-label="Our product"
-                        title="Our product"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Product
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        aria-label="Our product"
-                        title="Our product"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Donate
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        aria-label="Product Our Team"
-                        title="Product Our Team"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Our Team
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        aria-label="Statistics"
-                        title="Statistics"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                      >
-                        Statistics
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        aria-label="About Us"
-                        title="About Us"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                      <Link
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer"
+                        to="about"
+                        smooth={true}
+                        duration={500}
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                        }}
                       >
                         About Us
-                      </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 cursor-pointer"
+                        to="team"
+                        smooth={true}
+                        duration={500}
+                        onClick={() => {
+                          setIsMenuOpen(false);
+                        }}
+                      >
+                        Our Team
+                      </Link>
                     </li>
                   </ul>
                 </nav>

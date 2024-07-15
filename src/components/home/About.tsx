@@ -65,7 +65,10 @@ StoryItem.propTypes = {
 
 export default function About() {
   return (
-    <section className="ezy__about6 font-poppins  light pb-14 md:py-24 bg-white  text-zinc-900 flex justify-center items-center ">
+    <section
+      className="ezy__about6 font-poppins  light pb-14 md:py-24 bg-white  text-zinc-900 flex justify-center items-center "
+      id="about"
+    >
       <div className="container px-4 ">
         <div className="grid grid-cols-12 justify-center text-center mb-12">
           <div className="col-span-12 md:col-span-8 md:col-start-3">

@@ -4,7 +4,12 @@ export default function Footer() {
       <hr className="  border-gray-200 sm:mx-auto lg:my-2" />
       <div className="flex justify-center py-10 max-sm:py-2 ">
         <div className="flex mt-4 items-center sm:justify-center sm:mt-0 ">
-          <a href="#" className="text-gray-500 hover:text-gray-900 ">
+          <a
+            href="https://www.facebook.com/profile.php?id=61561176274421"
+            className="text-gray-500 hover:text-gray-900 "
+            target="_blank"
+            rel="noopener"
+          >
             <svg
               className="w-5 h-5 max-sm:w-4 max-sm:h-4"
               aria-hidden="true"
@@ -21,7 +26,12 @@ export default function Footer() {
             <span className="sr-only">Facebook page</span>
           </a>
 
-          <a href="#" className="text-gray-500 pt-1 hover:text-gray-900  ms-5">
+          <a
+            href="https://www.linkedin.com/company/sound-youth-circle/posts/?feedView=all"
+            target="_blank"
+            rel="noopener"
+            className="text-gray-500 pt-1 hover:text-gray-900  ms-5"
+          >
             <svg
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
