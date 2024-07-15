@@ -6,17 +6,9 @@ import About from "@/components/home/About";
 import Donate from "@/components/home/Donate";
 
 import Hero from "@/components/home/Hero";
-import Stats from "@/components/home/Stats";
+
 import Team from "@/components/home/Team";
 import Testimonials from "@/components/home/Testimonials";
-
-import {
-  TextRevealCard,
-  TextRevealCardTitle,
-  TextRevealCardDescription,
-} from "@/components/ui/text-reveal-card";
-
-import { WavyBackground } from "@/components/ui/wavy-background";
 
 import Image from "next/image";
 
