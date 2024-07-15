@@ -3,8 +3,6 @@ import Navbar from "@/components/common/Navbar";
 import ScrollToTop from "@/components/common/ScrollTop";
 import About from "@/components/home/About";
 
-import Carousal from "@/components/home/Carousal";
-import CoreTeam from "@/components/home/CoreTeam";
 import Donate from "@/components/home/Donate";
 
 import Hero from "@/components/home/Hero";
