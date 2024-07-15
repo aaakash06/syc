@@ -48,9 +48,21 @@ const teamMembers = [
     ],
   },
   {
+    picture: "/ankit.jpeg",
+    fullName: "Ankit Mehta",
+    designation: "Managing Director",
+    // bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
+    socialLinks: [
+      { icon: faFacebookF, href: "#" },
+      { icon: faLinkedinIn, href: "#" },
+      { icon: faTwitter, href: "#" },
+      { icon: faBehance, href: "#" },
+    ],
+  },
+  {
     picture: "/bipin.jpg",
     fullName: "Bipin Thapa",
-    designation: "Managing Director",
+    designation: "Cheif Financial Officer",
     // bio: "Subscribe Easy Tutorials Youtube Channel watch more videos",
     socialLinks: [
       { icon: faFacebookF, href: "#" },
@@ -82,7 +94,7 @@ const TeamMemberItem = ({
     <img
       src={member.picture}
       alt={member.fullName}
-      className="max-w-full h-auto rounded-full mx-auto xl:w-[170px] lg:w-[120px] w-[100px] border-2 border-sky-300"
+      className="max-w-full h-auto rounded-full mx-auto xl:w-[130px] lg:w-[100px] w-[90px] border-2 border-sky-300"
       width=""
     />
     <div className="px-4 py-6 xl:px-6">
@@ -128,7 +140,7 @@ export default function Team() {
             </p> */}
           </div>
         </div>
-        <div className="grid grid-cols-4 xl:gap-6 lg:gap-4 gap-2 text-center mt-20">
+        <div className="grid grid-cols-5 max-xl:grid-cols-4 xl:gap-6 lg:gap-4 gap-2 text-center mt-20">
           {teamMembers.map((member, i) => (
             <div className="col-span-4 md:col-span-2 lg:col-span-1" key={i}>
               <TeamMemberItem member={member} />
