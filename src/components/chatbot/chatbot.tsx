@@ -10,7 +10,7 @@ interface Chat {
     sender : 'USER' | 'AI'
 }
 
-const getChats = (chat:Chat,index)=>{
+const getChats = (chat:Chat,index: number)=>{
     if(chat.sender === 'USER') {
         return (
         <div className="flex gap-3 my-4 text-gray-600 text-sm flex-1" key={index}><span
