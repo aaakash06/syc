@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Poppins, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import ScrollToTop from "@/components/common/ScrollTop";
+// import ScrollToTop from "@/components/common/ScrollTop";
 
 const inter = Inter({
   subsets: ["latin"],
