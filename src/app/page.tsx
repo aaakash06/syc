@@ -9,7 +9,7 @@ import Hero from "@/components/home/Hero";
 
 import Team from "@/components/home/Team";
 import Testimonials from "@/components/home/Testimonials";
-import Chatbot from '@/components/chatbot/chatbot';
+import Chatbot from "@/components/chatbot/chatbot";
 import Image from "next/image";
 
 export default function Home() {

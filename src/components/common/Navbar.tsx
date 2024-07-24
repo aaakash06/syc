@@ -23,7 +23,7 @@ export default function Navbar() {
         </ul>
 
         <div className=" xl:w-[84px] xl:h-[84px] lg:w-[70px] lg:h-[70px] w-[55px] h-[55px] rounded-full  relative border-2 border-black">
-          <Image src={"/logo.png"} alt="logo" fill></Image>
+          <Image src={"/logo.png"} alt="logo" sizes="100" fill></Image>
         </div>
 
         <ul className="hidden items-center space-x-8 lg:flex">

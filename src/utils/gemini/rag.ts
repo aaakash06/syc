@@ -1,13 +1,12 @@
-require('dotenv').config();
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+"use server";
 
-// Access your API key as an environment variable (see "Set up your API key" above)
-// console.log("My api key: "+process.env.API_KEY);
-const genAI = new GoogleGenerativeAI("AIzaSyA_q38s-LW_v_q43QaFJbG-dOwlHOLDZKY");
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const genAI = new GoogleGenerativeAI(process.env.API_KEY!);
 
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-export default async function run(userQuery:string) {
+export default async function run(userQuery: string) {
   const context = `
     About Us: The primary purpose of our project is to foster a community of support and resilience among students. 
     By conducting regular support group sessions, we aim to normalize conversations around mental health, reduce stigma, 
@@ -24,8 +23,8 @@ export default async function run(userQuery:string) {
   `;
 
   const result = await model.generateContent(context);
-  const response = await result.response;
-  const text = await response.text();
-  console.log(text);
+  const response = result.response;
+  const text = response.text();
+
   return text;
 }
