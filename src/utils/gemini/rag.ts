@@ -7,6 +7,8 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY!);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 export default async function run(userQuery: string) {
+  console.log("print the api key ");
+  console.log(process.env.API_KEY!);
   const context = `
     About Us: The primary purpose of our project is to foster a community of support and resilience among students. 
     By conducting regular support group sessions, we aim to normalize conversations around mental health, reduce stigma, 
