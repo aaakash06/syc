@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Poppins, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { Scroll } from "./scrollbar";
+
 // import ScrollToTop from "@/components/common/ScrollTop";
 
 const inter = Inter({
@@ -33,9 +35,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logo.png" sizes="any" />;
       </head>
-
+      <Scroll></Scroll>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable}  ${poppins.variable}`}
+        className={`${inter.variable} h-screen ${spaceGrotesk.variable}  ${poppins.variable}`}
       >
         {children}
       </body>
