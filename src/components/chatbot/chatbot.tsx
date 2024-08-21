@@ -67,7 +67,7 @@ const getChats = (chat: Chat, index: number) => {
 };
 
 const chatbot = () => {
-  const [showChats, setShowChats] = useState<boolean>(false);
+  const [showChats, setShowChats] = useState<boolean>(true);
   const [query, setQuery] = useState<string>("");
   const defaultAiText: Chat = {
     message: "Hi, how can I help you today?",
@@ -92,9 +92,11 @@ const chatbot = () => {
   return (
     <div className="syc-chatbot">
       <button
+        title="chat"
         onClick={() => setShowChats((p) => !p)}
-        style={{ display: !showChats ? "flex" : "none" }}
-        className="fixed bottom-4 right-4 inline-flex items-center justify-center text-sm font-medium disabled:pointer-events-none disabled:opacity-50 border rounded-full w-14 h-14 bg-black hover:bg-gray-700 m-0 cursor-pointer border-gray-200 bg-none p-0 normal-case leading-5 hover:text-gray-900"
+        className={`fixed bottom-4 right-4 inline-flex items-center justify-center text-sm font-medium disabled:pointer-events-none disabled:opacity-50 border rounded-full w-14 h-14 max-sm:w-10 max-sm:h-10 bg-black hover:bg-gray-700 m-0 cursor-pointer border-gray-200 bg-none p-0 normal-case leading-5 hover:text-gray-900 ${
+          showChats && "hidden"
+        } `}
         type="button"
         aria-haspopup="dialog"
         aria-expanded="false"
@@ -123,28 +125,29 @@ const chatbot = () => {
           boxShadow: "0 0 #0000, 0 0 #0000, 0 1px 2px 0 rgb(0 0 0 / 0.05)",
           display: showChats ? "block" : "none",
           zIndex: 100,
-          overflowY: "scroll",
+          overflowY: "auto",
         }}
-        className="fixed bottom-2 right-0 mr-8 bg-white p-6 rounded-lg border border-[#e5e7eb] w-[440px] h-[650px]"
+        className="fixed  bottom-2 right-8 max-sm:right-1 bg-white p-6 rounded-lg border border-[#e5e7eb] w-[440px] h-[650px] max-sm:w-[370px]  "
       >
-        <button onClick={() => setShowChats(false)}>
+        <button title="cross" onClick={() => setShowChats(false)} className="">
           <Image
             src={"/cross.png"}
             alt="logo"
             width={30}
             height={30}
-            style={{ marginLeft: "360px" }}
+            className="ml-[360px] max-sm:ml-[300px]"
+            // style={{ marginLeft: "360px" }}
           ></Image>
         </button>
-        <div className="flex flex-col space-y-1.5 pb-6">
+        <div className="flex flex-col bg-white space-y-1.5 pb-6">
           <h2 className="font-semibold text-lg tracking-tight">SYC AI</h2>
           <p className="text-sm text-[#6b7280] leading-3">
             Your Mental Health AI Guide
           </p>
         </div>
         <div
-          className="pr-4 h-[474px]"
-          style={{ minWidth: "100%", display: "table" }}
+          className="pr-4 max-sm:pr-0 h-[474px] min-w-screen table"
+          // style={{ minWidth: "100%", display: "table" }}
         >
           {chats.map((c, i) => (
             <React.Fragment key={i}>{getChats(c, i)}</React.Fragment>

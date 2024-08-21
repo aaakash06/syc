@@ -7,8 +7,6 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY!);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 export default async function run(userQuery: string) {
-  console.log("print the api key ");
-  console.log(process.env.API_KEY!);
   const context = `
     About Us: The primary purpose of our project is to foster a community of support and resilience among students. 
     By conducting regular support group sessions, we aim to normalize conversations around mental health, reduce stigma, 
@@ -22,6 +20,8 @@ export default async function run(userQuery: string) {
 
     Please answer User query using above context and keep the answer in one very very short paragraph and try to perfectly answer user query.
     User Query: ${userQuery}
+
+    If the question is out of the context of the text given above, reply saying that you can't help with that and tell to contact 9766873785. DO NOT MENTION anything about the text that has been provided above. Be polite with you response. 
   `;
 
   const result = await model.generateContent(context);

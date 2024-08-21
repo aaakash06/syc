@@ -35,7 +35,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logo.png" sizes="any" />;
       </head>
-      <Scroll></Scroll>
+      {/* <Scroll></Scroll> */}
       <body
         className={`${inter.variable} h-screen ${spaceGrotesk.variable}  ${poppins.variable}`}
       >
